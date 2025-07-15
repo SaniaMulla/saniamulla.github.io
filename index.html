@@ -3,249 +3,424 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sania Mulla Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Georgia', serif;
+  <title>Sania Mulla | Frontend Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=The+Seasons&family=Lora&display=swap" rel="stylesheet">
+<style>
+    .icons a {
+      text-decoration: none;
     }
+    .icons a i {
+      color: #ffd6ec;
+      transition: transform 0.3s ease;
+    }
+    .icons a:hover i {
+      transform: scale(1.2);
+      color: #ffffff;
+    }
+    @keyframes sparkle {
+  0% { text-shadow: 0 0 5px #ffd6ec, 0 0 10px #ffd6ec; }
+  50% { text-shadow: 0 0 15px #fff, 0 0 25px #ffd6ec; }
+  100% { text-shadow: none; }
+}
+  50% { text-shadow: 0 0 15px #fff, 0 0 25px #ffd6ec; }
+  100% { text-shadow: none; }
+}
+  50% { text-shadow: 0 0 15px #fff, 0 0 25px #ffd6ec; }
+  100% { text-shadow: none; }
+}
+      50% { text-shadow: 0 0 15px #fff, 0 0 25px #ffd6ec; }
+      100% { text-shadow: 0 0 5px #ffd6ec, 0 0 10px #ffd6ec; }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
-      background: url('bg.jpg') no-repeat center center fixed;
+      font-family: 'Lora', serif;
+      background: url('bgd.jpeg') no-repeat center center fixed;
       background-size: cover;
-      color: #3e2f2f;
-      min-height: 100vh;
+      color: #fefefe;
     }
-    nav {
+    .intro {
+  position: relative; /* Needed for ::before */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+  flex-direction: column;
+  background: url('WhatsApp Image 2025-06-19 at 2.07.21 PM.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: 1; /* Make sure intro content appears above the blur */
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px); /* Blur strength */
+  z-index: 0; /* This stays behind the content */
+}
+.intro * {
+  position: relative;
+  z-index: 2;
+}
+
+    .intro h1 {
+      font-size: 4rem;
+      color: #ffd6ec;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #ffd6ec;
+      width: 0;
+      animation: typing 3s steps(20, end) forwards, blink 0.8s steps(1) 3;
+    }
+    .intro img {
+      margin-top: 1rem;
+      width: 220px;
+      border-radius: 12px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease 3s forwards;
+    }
+    @keyframes typing {
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    header {
+      background-color: #a56a5d;
+      padding: 0.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.6);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      transition: top 0.3s ease-in-out;
-    }
-    nav h1 {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    .menu-icon {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
       flex-wrap: wrap;
-      gap: 20px;
     }
-    nav ul li a {
+    header h1 { font-size: 2rem; font-weight: 600; }
+    nav { display: none; flex-direction: column; width: 100%; margin-top: 1rem; }
+    nav a {
       text-decoration: none;
-      color: #3e2f2f;
-      font-weight: bold;
+      color: #fff;
+      font-weight: 500;
+      padding: 0.7rem 0;
+      transition: all 0.3s ease;
     }
-     section {
-  padding: 80px 20px 10px; 
-  max-width: 1200px;
-  margin: auto;
-}
-    .section-title {
-      font-size: 2.5rem; 
-      margin-bottom: 6px;
-      text-align: center;
+    nav a:hover {
+      color: #ffd6ec;
+      transform: scale(1.05);
     }
-    .section-content {
-      background-color: rgba(255, 255, 255, 0.75);
-      border-radius: 16px;
-      padding: 24px; 
-      margin-bottom: 12px;
-    }
-
-
-    .photo-about-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      align-items: center;
-      justify-content: center;
-    }
-    .photo-box {
-      border: 5px solid #8B5E3C;
-      border-radius: 20px;
-      overflow: hidden;
-      margin-bottom: 0;
-    }
-    .photo-box img {
-      width: 180px;
-      height: auto;
+    .menu-toggle {
+      font-size: 1.8rem;
+      cursor: pointer;
       display: block;
     }
-    .about-text {
-      max-width: 600px;
-      font-size: 1.1rem;
-      line-height: 1.6;
+    @media(min-width: 769px) {
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        width: auto;
+        gap: 2rem;
+        margin-top: 0;
+      }
+      .menu-toggle { display: none; }
     }
-    .icons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
-      flex-wrap: wrap;
+    section {
+  padding: 1.5rem 1rem; /* reduced from 3rem 2rem */
+  background: rgba(165, 106, 93, 0.6);
+  margin-bottom: 2rem; /* optional: reduce space between sections too */
+  border-radius: 12px;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+    section.active {
+      opacity: 1;
     }
-    .icons a {
-      color: #3e2f2f;
-      font-size: 28px;
-      transition: transform 0.3s;
-    }
-    .icons a:hover {
-      transform: scale(1.2);
-    }
-    .resume-button {
+    section.about.active { animation: slideInLeft 1s ease forwards; }
+    section.education.active { animation: slideInRight 1s ease forwards; }
+    section.experience.active { animation: slideInLeft 1s ease forwards; }
+    section.skills.active { animation: slideInRight 1s ease forwards; }
+    section.projects.active { animation: slideInLeft 1s ease forwards; }
+    section.contact.active { animation: slideInUp 1s ease forwards; }
+    @keyframes slideInLeft { 0% { transform: translateX(-80px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+    @keyframes slideInRight { 0% { transform: translateX(80px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+    @keyframes slideInUp { 0% { transform: translateY(50px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+    h2, header h1, .intro h1 { font-family: 'The Seasons', serif; }
+    h2 {
+      font-size: 2.7rem;
+      margin-bottom: 1.5rem;
+      color: #ffd6ec;
       text-align: center;
-      margin-top: 24px;
     }
-    .resume-button a {
-      background-color: #3e2f2f;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 30px;
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    .about img {
+      width: 200px;
+      height: auto;
+      border-radius: 20px;
+    }
+    .about-text {
+      max-width: 700px;
+      text-align: left;
+    }
+    @media(min-width: 768px) {
+      .about-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+      }
+    }
+    .skills ul, .education ul, .experience ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+    .skills li::before, .education li::before, .experience li::before {
+      content: '★ ';
+      color: #ffd6ec;
+    }
+    .contact {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    .resume-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #ffd6ec;
+      color: #1c1c1c;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
     }
-    .resume-button a:hover {
-      background-color: #2c1f1f;
+    .resume-btn:hover {
+      background-color: #ffadc9;
     }
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: block;
-      }
-      nav ul {
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background-color: rgba(255,255,255,0.95);
-        padding: 10px;
-        display: none;
-        width: 100%;
-      }
-      nav ul.show {
-        display: flex;
-      }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: rgba(0,0,0,0.6);
     }
-  </style>
+  body.blur-bg::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(4px);
+      z-index: -1;
+    }
+</style>
 </head>
 <body>
-  <nav>
-    <h1>Sania Mulla</h1>
-    <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-    <ul id="menu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <div class="intro" style="text-align: center; position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
+  <h1 id="typewriter" style="font-size: 10vw; color: #ffd6ec; text-transform: uppercase; white-space: nowrap; overflow: hidden; border-right: 2px solid #ffd6ec; width: 0; margin: 0 auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></h1>
+  <div id="flip-container" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, 0); display: flex; flex-direction: column; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
+    <img src="myphoto.jpeg" alt="Sania" style="width: 250px; height: auto; border-radius: 12px;">
+    <p id="title-role" style="margin-top: 0.2rem; font-size: 2.5rem; color: #ffd6ec; opacity: 0;">Frontend Developer</p>
+  </div>
+</div>
+</div>
 
-  <section id="about">
-    <div class="section-content">
-      <h2 class="section-title">About</h2>
-      <div class="photo-about-wrapper">
-        <div class="photo-box">
-          <img src="Sania.jpeg" alt="Sania Mulla">
-        </div>
-        <div class="about-text">
-          <p>Hi! I’m Sania Mulla, a Computer Engineer based in Pune, blending logic with creativity. With a strong foundation in software and hardware, and hands-on experience in C++, Python, HTML, and CSS, I’m passionate about crafting tech that connects. My journey merges technical depth with a love for visual storytelling, content design, and social media strategy. I thrive on turning ideas into engaging, impactful digital experiences.</p>
-        </div>
+  <main id="main-content" style="display: none;">
+  <header>
+    <h1>Sania Mulla</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav id="menu">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <!-- <img src="myphoto.jpeg" alt="Sania Coding"> -->
+      <div class="about-text">
+        <p>I’m Sania Mulla, a Pune-based Frontend Developer who merges clean, efficient code with eye-catching design. With hands-on experience in HTML, CSS, JavaScript, and frameworks like Bootstrap, I craft responsive, intuitive websites that don’t just look great — they work seamlessly across devices.</p>
+        <p>With internships at Jijau Softwares and Raj Sales & Services, I’ve built and deployed real-world websites, managed business-facing UIs, and contributed to design strategies — blending both logic and aesthetics into every screen.</p>
+        <p>I approach interface design with precision and structure. What sets me apart is my creative versatility — shaped through content design, video editing, and storytelling — bringing every project a polished, user-focused finish.</p>
       </div>
     </div>
   </section>
 
-  <section id="education">
-    <div class="section-content">
-      <h2 class="section-title">Education</h2>
-      <p><strong>B.E. Computer Engineering</strong> – PVGCOET, Pune (2021–2025)<br/><br/>
-         <strong>HSC</strong> – YCIS, Satara – 88.33%<br/><br/>
-         <strong>SSC</strong> – KSD Shanbhag Vidyalaya, Satara – 87.40%<br/><br/>
-         <strong>MHT CET</strong> – 95.66 percentile</p>
+  <section class="education" id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>PVGCOET, Pune:</strong> B.E. in Computer Engineering (2021–2025)</li>
+      <li><strong>YCIS, Satara:</strong> HSC – 88.33%</li>
+      <li><strong>KSD Shanbhag Vidyalaya:</strong> SSC – 87.40%</li>
+    </ul>
+  </section>
+
+  <section class="experience" id="experience">
+    <h2>Work Experience</h2>
+    <ul>
+      <li><strong>Jijau Softwares</strong> (Dec 2023 – Jan 2024):
+        <ul>
+          <li>Developed responsive pages using HTML, CSS, and JavaScript.</li>
+          <li>Implemented real-time UI updates and collaborated in agile teams.</li>
+          <li>Practiced version control using Git and GitHub.</li>
+        </ul>
+      </li>
+      <li><strong>Raj Sales & Services</strong> (Feb 2024 – Feb 2025):
+        <ul>
+          <li>Created digital business presentations and promotional materials.</li>
+          <li>Contributed to UI/UX strategies for internal web platforms.</li>
+          <li>Handled data-driven design decisions using feedback and analytics.</li>
+        </ul>
+      </li>
+      
+    </ul>
+  </section>
+
+
+
+<section class="skills" id="skills">
+    <h2>Skills</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;">
+      <div>
+  <h3>Technical</h3>
+  <ul>
+    <li>HTML, CSS, JavaScript</li>
+    <li>Bootstrap, Responsive Design</li>
+    <li>C++, Python</li>
+  </ul>
+</div>
+      <div>
+        <h3>Tools</h3>
+        <ul>
+          <li>GitHub, VS Code</li>
+          <li>Microsoft Office, Canva</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Team Collaboration</li>
+          <li>Creativity & Storytelling</li>
+          <li>Time Management</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <ul>
+          <li>English</li>
+          <li>Hindi</li>
+          <li>Marathi</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section id="experience">
-    <div class="section-content">
-      <h2 class="section-title">Experience</h2>
-      <p><strong>Web Developer Intern</strong> – Jijau Softwares (Dec 2023 – Jan 2024)<br/>Built responsive pages, explored tools, adapted to project needs.</p><br/>
-      <p><strong>Associate Business Analyst (Part-Time)</strong> – Raj Sales & Services (Feb 2024 – Feb 2025)<br/>Worked on content, strategies, presentations & website (cablemall.in).</p><br/>
-      <p><strong>Content Creator</strong></br>– @the365dayproject<br/>Creating Shorts & long videos about mindset, growth & habit-building.</p>
-      <p>- @siana.diary</br>A visual diary of creativity, calm, and curated moments.</p>
+  <section class="projects" id="projects">
+  <h2>Projects</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+    <div class="project-card" style="flex: 1 1 300px; background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 12px;">
+      <h3>SynapseIQ</h3>
+      <p>AI-powered educational assistant with document interaction and chatbot features.</p>
+      <a href="#">View Project</a>
     </div>
-  </section>
-
-  <section id="skills">
-    <div class="section-content">
-      <h2 class="section-title">Skills</h2>
-      <p><strong>Technical:</strong> C++, Python, HTML, CSS, JavaScript, ChatGPT, Windows/Linux<br/><br/>
-         <strong>Soft:</strong> Time management, Communication, Creativity, Adaptability, Teamwork<br/><br/>
-         <strong>Tools:</strong> Canva, Clipchamp, Adobe Photoshop (Learning), InShot, GitHub, VS Code, MS Office<br/><br/>
-         <strong>Languages:</strong> English, Hindi, Marathi</p>
+    <div class="project-card" style="flex: 1 1 300px; background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 12px;">
+      <h3>Stock Market Website</h3>
+      <p>Real-time stock prices, historical charts, and interactive visuals using web APIs.</p>
+      <a href="#">View Project</a>
     </div>
-  </section>
-
-  <section id="projects">
-    <div class="section-content">
-      <h2 class="section-title">Projects</h2>
-      <p><strong>SynapseIQ:</strong> AI-powered education assistant with chatbot, flashcards, summaries, quizzes.</p><br/>
-      <p><strong>Stock Market Website:</strong> Real-time prices, historical data, charts, and stock tools.</p><br/>
-      <p><strong>Seminar:</strong> Social Engineering and Artificial Intelligence.</p><br/>
-      <p><strong>Personal Portfolio Website:</strong> Visually rich, responsive web portfolio.</p><br/>
-      <p><strong>@the365dayproject:</strong> YouTube Channel.</p><br/>
-      <p><strong>@siana.diary:</strong> Instagram Account.</p>
+    <div class="project-card" style="flex: 1 1 300px; background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 12px;">
+      <h3>Portfolio Website</h3>
+      <p>Fully responsive developer portfolio with custom animations and design aesthetic.</p>
+      <a href="http://saniamulla.github.io/" target="_blank">Visit Site</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="contact">
-    <div class="section-content">
-      <h2 class="section-title">Contact Me</h2>
-      <p>Email: <a href="mailto:saniamulla99@gmail.com">saniamulla99@gmail.com</a><br/>Phone: 9970768834 / 9529927034<br/>Location: Pune, Maharashtra</p>
-      <div class="icons">
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=saniamulla99@gmail.com" target="_blank" title="Email">
-  <i class="fa-solid fa-envelope"></i>
-</a>
-
-
-        <a href="https://linkedin.com/in/saniamulla2003" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://youtube.com/@the365dayproject" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://instagram.com/siana.diary" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://github.com/SaniaMulla" target="_blank" title="Github"><i class="fa-brands fa-github"></i></a>
-      </div>
-      <div class="resume-button">
-        <a href="SaniaMulla_Resume.pdf" target="_blank">Resume</a>
-      </div>
+  <div class="section-content" style="max-width: 800px; margin: auto; text-align: center;">
+    <h2 class="section-title">Contact Me</h2>
+    <p style="margin-bottom: 1rem; color: #fff; font-size: 1rem;">Email: <a href="mailto:saniamulla99@gmail.com" style="color: #ffd6ec;">saniamulla99@gmail.com</a><br/>Phone: 9970768834 / 9529927034<br/>Location: Pune, Maharashtra</p>
+    <div class="icons" style="display: flex; justify-content: center; gap: 1rem; font-size: 1.5rem; margin-bottom: 1rem;">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=saniamulla99@gmail.com" target="_blank" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://linkedin.com/in/saniamulla2003" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://youtube.com/@the365dayproject" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://instagram.com/siana.diary" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://github.com/SaniaMulla" target="_blank" title="Github"><i class="fa-brands fa-github"></i></a>
     </div>
-  </section>
+    <div class="resume-button">
+      <a href="SaniaMulla_Resume.pdf" target="_blank" class="resume-btn">View My Resume</a>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Sania Mulla. Designed with passion and a hint of magic ✨</p>
+  </footer>
+  </main>
 
   <script>
-    let lastScrollTop = 0;
-    const nav = document.querySelector("nav");
-    window.addEventListener("scroll", function () {
-      let scrollTop = window.scrollY || document.documentElement.scrollTop;
-      nav.style.top = scrollTop > lastScrollTop ? "-100px" : "0";
-      lastScrollTop = scrollTop;
-    });
-
     function toggleMenu() {
-      document.getElementById("menu").classList.toggle("show");
+      const nav = document.getElementById("menu");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
     }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
   </script>
+<script>
+  const typewriter = document.getElementById("typewriter");
+  const flipContainer = document.getElementById("flip-container");
+  const titleRole = document.getElementById("title-role");
+  const text = "SANIA MULLA";
+  let index = 0;
+
+  function typeEffect() {
+    document.body.classList.add("blur-bg");
+    if (index < text.length) {
+      typewriter.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeEffect, 150);
+    } else {
+      setTimeout(() => {
+        typewriter.style.borderRight = "none";
+        typewriter.style.transition = "top 0.5s ease, transform 0.5s ease";
+        typewriter.style.top = "5%";
+        typewriter.style.transform = "translate(-50%, 0)";
+        flipContainer.style.opacity = 1;
+        titleRole.style.opacity = 1;
+        titleRole.style.animation = "sparkle 1.2s ease-in-out 1 forwards";
+        document.getElementById("main-content").style.display = "block";
+      }, 300);
+    }
+  }
+
+  window.onload = typeEffect;
+  
+          
+</script>
 </body>
 </html>
