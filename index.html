@@ -221,6 +221,22 @@
       backdrop-filter: blur(4px);
       z-index: -1;
     }
+
+  .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  flex: 1 1 300px;
+}
+
 </style>
 </head>
 <body>
@@ -273,7 +289,7 @@
   <section class="experience" id="experience">
     <h2>Work Experience</h2>
     <ul>
-      <li><strong>Jijau Softwares</strong> (Dec 2023 – Jan 2024):
+      <li><strong>JS</strong> (Dec 2023 – Jan 2024):
         <ul>
           <li>Developed responsive pages using HTML, CSS, and JavaScript.</li>
           <li>Implemented real-time UI updates and collaborated in agile teams.</li>
@@ -342,23 +358,33 @@ Bootstrap</li>
     </div>
   </section>
 
-  <section class="projects" id="projects">
-  <h2>Projects</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-    <div class="project-card" style="flex: 1 1 300px; background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 12px;">
+  <div class="projects-grid">
+    <!-- SynapseIQ -->
+    <div class="project-card">
       <h3>SynapseIQ</h3>
       <p>AI-powered educational assistant with document interaction and chatbot features.</p>
       <a href="#">View Project</a>
     </div>
-    <div class="project-card" style="flex: 1 1 300px; background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 12px;">
+
+    <!-- AI Agent -->
+    <div class="project-card">
+      <h3>AI Agent Chatbot</h3>
+      <p>Mini AI assistant using LangChain, FastAPI & OpenAI that answers queries based on uploaded files.</p>
+      <a href="#">View Project</a>
+    </div>
+
+    <!-- Amani Attires -->
+    <div class="project-card">
       <h3>Amani Attires - Clothing brand website</h3>
       <p>Developed a responsive and visually appealing website for a clothing brand using HTML, CSS, and JavaScript.</p>
       <a href="https://glittering-medovik-b20e48.netlify.app/" target="_blank" rel="noopener noreferrer">Visit Site</a>
     </div>
-    <div class="project-card" style="flex: 1 1 300px; background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 12px;">
+
+    <!-- Portfolio -->
+    <div class="project-card">
       <h3>Portfolio Website</h3>
       <p>Fully responsive developer portfolio with custom animations and design aesthetic.</p>
-      <a href="http://saniamulla.github.io/" target="_blank">Visit Site</a>
+      <a href="http://saniamulla.github.io/" target="_blank" rel="noopener noreferrer">Visit Site</a>
     </div>
   </div>
 </section>
@@ -436,5 +462,6 @@ Bootstrap</li>
 </script>
 </body>
 </html>
+
 
 
