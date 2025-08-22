@@ -40,15 +40,16 @@
       color: #fefefe;
     }
     .intro {
-  position: relative;
+  position: relative; /* Needed for ::before */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding-bottom: 4rem;
   flex-direction: column;
-  background-color: #f9f5f0;  /* very light beige */
-  z-index: 1;
+  background: url('WhatsApp Image 2025-06-19 at 2.07.21 PM.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: 1; /* Make sure intro content appears above the blur */
 }
 
 
@@ -486,6 +487,7 @@ Bootstrap</li>
 </script>
 </body>
 </html>
+
 
 
 
