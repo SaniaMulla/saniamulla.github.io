@@ -7,77 +7,87 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=The+Seasons&family=Lora&display=swap" rel="stylesheet">
 <style>
+    /* Icons */
     .icons a {
       text-decoration: none;
     }
     .icons a i {
-      color: #ffd6ec;
+      color: #000; /* black icons */
       transition: transform 0.3s ease;
     }
     .icons a:hover i {
       transform: scale(1.2);
-      color: #ffffff;
+      color: #444; /* darker hover */
     }
+
+    /* Sparkle animation */
     @keyframes sparkle {
-  0% { text-shadow: 0 0 5px #ffd6ec, 0 0 10px #ffd6ec; }
-  50% { text-shadow: 0 0 15px #fff, 0 0 25px #ffd6ec; }
-  100% { text-shadow: none; }
-}
-  50% { text-shadow: 0 0 15px #fff, 0 0 25px #ffd6ec; }
-  100% { text-shadow: none; }
-}
-  50% { text-shadow: 0 0 15px #fff, 0 0 25px #ffd6ec; }
-  100% { text-shadow: none; }
-}
-      50% { text-shadow: 0 0 15px #fff, 0 0 25px #ffd6ec; }
-      100% { text-shadow: 0 0 5px #ffd6ec, 0 0 10px #ffd6ec; }
+      0% { text-shadow: 0 0 5px #000, 0 0 10px #333; }
+      50% { text-shadow: 0 0 15px #555, 0 0 25px #000; }
+      100% { text-shadow: none; }
     }
+
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
     body {
       font-family: 'Lora', serif;
-      background: url('bgd.jpeg') no-repeat center center fixed;
+      background-color: #ffffff;
       background-size: cover;
-      color: #fefefe;
+      color: #000; /* black text */
     }
+
     .intro {
-  position: relative; /* Needed for ::before */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding-bottom: 4rem;
-  flex-direction: column;
-  background: url('WhatsApp Image 2025-06-19 at 2.07.21 PM.jpeg') no-repeat center center fixed;
-  background-size: cover;
-  z-index: 1; /* Make sure intro content appears above the blur */
-}
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding-bottom: 4rem;
+      flex-direction: column;
+    background-image: url("bgimage (2).jpg"); /* path to your image */
+    background-size: cover;   /* makes it fill the div */
+    background-position: center; /* keeps it centered */
+    background-repeat: no-repeat; 
+    z-index: 1;
+    }
 
-
-.intro::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(6px); /* Blur strength */
-  z-index: 0; /* This stays behind the content */
-}
-.intro * {
-  position: relative;
-  z-index: 2;
-}
+    .intro::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* backdrop-filter: blur(6px); */
+      z-index: 0;
+    }
+    .intro * {
+      position: relative;
+      z-index: 2;
+    }
 
     .intro h1 {
       font-size: 4rem;
-      color: #ffd6ec;
-      text-transform: uppercase;
+      color: #000; /* black typewriter text */
+      text-transform: none;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid #ffd6ec;
+      border-right: 2px solid #000;
       width: 0;
       animation: typing 3s steps(20, end) forwards, blink 0.8s steps(1) 3;
     }
+
+    #typewriter {
+  text-transform: none !important;
+}
+
+    #projects {
+    animation: none !important;
+    opacity: 1 !important;
+    }
+
+
+
     .intro img {
       margin-top: 1rem;
       width: 220px;
@@ -85,6 +95,7 @@
       opacity: 0;
       animation: fadeIn 1.5s ease 3s forwards;
     }
+
     @keyframes typing {
       to { width: 100%; }
     }
@@ -95,25 +106,26 @@
       0% { opacity: 0; transform: translateY(50px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
     header {
-      background-color: #a56a5d;
+      background-color: #111; /* dark header */
       padding: 0.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
-    header h1 { font-size: 2rem; font-weight: 600; }
+    header h1 { color: #fff; font-size: 2rem; font-weight: 600; }
     nav { display: none; flex-direction: column; width: 100%; margin-top: 1rem; }
     nav a {
       text-decoration: none;
-      color: #fff;
+      color: #fff; /* white nav links */
       font-weight: 500;
       padding: 0.7rem 0;
       transition: all 0.3s ease;
     }
     nav a:hover {
-      color: #ffd6ec;
+      color: #888; /* gray hover */
       transform: scale(1.05);
     }
     .menu-toggle {
@@ -131,14 +143,16 @@
       }
       .menu-toggle { display: none; }
     }
+
     section {
-  padding: 1.5rem 1rem; /* reduced from 3rem 2rem */
-  background: rgba(165, 106, 93, 0.6);
-  margin-bottom: 2rem; /* optional: reduce space between sections too */
-  border-radius: 12px;
-  opacity: 0;
-  transition: all 1s ease;
-}
+      padding: 1.5rem 1rem;
+      background-color: #f3e7fa; 
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      opacity: 0;
+      transition: all 1s ease;
+      color: #000; /* black text */
+    }
 
     section.active {
       opacity: 1;
@@ -149,16 +163,14 @@
     section.skills.active { animation: slideInRight 1s ease forwards; }
     section.projects.active { animation: slideInLeft 1s ease forwards; }
     section.contact.active { animation: slideInUp 1s ease forwards; }
+
     @keyframes slideInLeft { 0% { transform: translateX(-80px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
     @keyframes slideInRight { 0% { transform: translateX(80px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
     @keyframes slideInUp { 0% { transform: translateY(50px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+
     h2, header h1, .intro h1 { font-family: 'The Seasons', serif; }
-    h2 {
-      font-size: 2.7rem;
-      margin-bottom: 1.5rem;
-      color: #ffd6ec;
-      text-align: center;
-    }
+    h2 { font-size: 2.7rem; margin-bottom: 1.5rem; color: #111; text-align: center; }
+
     .about-container {
       display: flex;
       flex-direction: column;
@@ -170,10 +182,8 @@
       height: auto;
       border-radius: 20px;
     }
-    .about-text {
-      max-width: 700px;
-      text-align: left;
-    }
+    .about-text { max-width: 700px; text-align: left; }
+
     @media(min-width: 768px) {
       .about-container {
         flex-direction: row;
@@ -181,38 +191,56 @@
         align-items: flex-start;
       }
     }
+
     .skills ul, .education ul, .experience ul {
       list-style: none;
       padding-left: 1rem;
     }
     .skills li::before, .education li::before, .experience li::before {
       content: '★ ';
-      color: #ffd6ec;
+      color: #000; /* black stars */
     }
-    .contact {
-      text-align: center;
-      font-size: 1.1rem;
-    }
+
+    .contact { text-align: center; font-size: 1.1rem; }
     .resume-btn {
       display: inline-block;
       margin-top: 1.5rem;
       padding: 0.75rem 1.5rem;
-      background-color: #ffd6ec;
-      color: #1c1c1c;
+      background-color: #000; /* black button */
+      color: #fff; /* white text */
       text-decoration: none;
       font-weight: bold;
       border-radius: 8px;
       transition: background-color 0.3s ease;
     }
     .resume-btn:hover {
-      background-color: #ffadc9;
+      background-color: #333; /* darker hover */
     }
+
+    .button{
+        display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #000; /* black button */
+      color: #fff; /* white text */
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease; 
+    }
+
+    .button:hover {
+      background-color: #333; /* darker hover */
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(255,255,255,0.8); /* light footer */
+      color: #000;
     }
-  body.blur-bg::before {
+
+    body.blur-bg::before {
       content: "";
       position: fixed;
       top: 0;
@@ -224,39 +252,81 @@
     }
 
     .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: rgba(0, 0, 0, 0.05); /* very light black overlay */
+      padding: 1rem;
+      border-radius: 12px;
+      flex: 1 1 300px;
+      color: #000;
+    }
+
+    #projects img,
+    #projects video {
+      width: 70%;
+      max-width: 800px;
+      height: auto;
+      display: block;
+      margin: 0 auto 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+
+@media (max-width: 768px) {
+  /* Increase "Hi, I am Sania" text size */
+  #typewriter {
+    font-size: 12vw !important; /* slightly bigger on mobile */
+  }
+
+  /* Reduce photo size a bit */
+  #flip-container img {
+    width: 200px !important; /* smaller photo */
+  }
+
+  /* Reduce "Computer Engineer" text size */
+  #title-role {
+    font-size: 2rem !important; /* slightly smaller */
+  }
+
+  /* Adjust spacing between text and photo */
+  #flip-container {
+    top: 30% !important;
+    transform: translate(-50%, 0) !important;
+  }
+
+  #flip-container img {
+    margin-top: 0.2rem !important; /* minimal gap between text and photo */
+  }
 }
 
-.project-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 12px;
-  flex: 1 1 300px;
+
+@media (max-width: 768px) {
+  .intro {
+    background: url("mobilebgg.jpg") no-repeat center center/cover !important;
+  }
 }
-  #projects img,
-#projects video {
-  width: 70%;          /* adjust size (try 60–80%) */
-  max-width: 800px;    /* never grow beyond this */
-  height: auto;
-  display: block;
-  margin: 0 auto 30px; /* center + spacing below */
-  border-radius: 12px; /* soft corners */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
-}
+
+
+
+
 
 
 </style>
+
 </head>
 <body>
   <div class="intro" style="text-align: center; position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-  <h1 id="typewriter" style="font-size: 10vw; color: #ffd6ec; text-transform: uppercase; white-space: nowrap; overflow: hidden; border-right: 2px solid #ffd6ec; width: 0; margin: 0 auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></h1>
+  <h1 id="typewriter" style="font-size: 10vw; color: #000000; text-transform: uppercase; white-space: nowrap; overflow: hidden; border-right: 2px solid #000000; width: 0; margin: 0 auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></h1>
   <div id="flip-container" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, 0); display: flex; flex-direction: column; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
     <img src="Saniaphoto.jpeg" alt="Sania" style="width: 250px; height: auto; border-radius: 12px;">
-    <p id="title-role" style="margin-top: 0.2rem; font-size: 2.5rem; color: #ffd6ec; opacity: 0;">Computer Engineer</p>
+    <p id="title-role" style="margin-top: 0.2rem; font-size: 2.5rem; color: #000000; opacity: 0;">Computer Engineer</p>
   </div>
 </div>
 </div>
@@ -378,38 +448,51 @@ Bootstrap</li>
     <!-- SynapseIQ - Photo -->
     <div class="project-card">
       <h3>SynapseIQ</h3>
-      <p>AI-powered educational assistant with document interaction and chatbot features.</p>
+      <p>AI-powered educational assistant with document interaction and chatbot features.</p><br>
       <img src="synapseiq-photo.jpg" alt="SynapseIQ Screenshot" style="width:100%; border-radius:8px;">
-      <a href="#">View Project</a>
+      <!-- <button><a href="#">View Project</a></button> -->
+       <div class="resume-button">
+       <a href="#" target="_blank" class="resume-btn">View Project</a>
+       </div>
     </div>
+    
 
     <!-- Chatbot - Video -->
     <div class="project-card">
       <h3>AI Agent Chatbot</h3>
-      <p>RAG-powered document chatbot built with LangChain, FAISS, and OpenAI that answers queries from uploaded files.</p>
+      <p>RAG-powered document chatbot built with LangChain, FAISS, and OpenAI that answers queries from uploaded files.</p><br>
       <video controls style="width:100%; border-radius:8px;">
         <source src="chatbot-demo.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <a href="#">View Project</a>
+      <!-- <a href="#">View Project</a> -->
+      <div class="resume-button">
+       <a href="#" target="_blank" class="resume-btn">View Project</a>
+       </div>
     </div>
 
     <!-- Amani Attires - Video -->
     <div class="project-card">
       <h3>Amani Attires</h3>
-      <p>Developed a responsive and visually appealing website for a clothing brand using HTML, CSS, and JavaScript.</p>
+      <p>Developed a responsive and visually appealing website for a clothing brand using HTML, CSS, and JavaScript.</p><br>
       <video controls style="width:100%; border-radius:8px;">
         <source src="amani-attires-demo.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <a href="https://glittering-medovik-b20e48.netlify.app/" target="_blank" rel="noopener noreferrer">Visit Site</a>
+      <!-- <a href="https://glittering-medovik-b20e48.netlify.app/" target="_blank" rel="noopener noreferrer">Visit Site</a> -->
+      <div class="resume-button">
+       <a href="https://glittering-medovik-b20e48.netlify.app/" target="_blank" rel="noopener noreferrer" class="resume-btn">Visit Site</a>
+       </div>
     </div>
 
     <!-- Portfolio Website -->
-    <div class="project-card" style="height: 125px; flex: none;">
+    <div class="project-card" style="height: 150px; flex: none;">
       <h3>Portfolio Website</h3>
       <p>Fully responsive developer portfolio with custom animations and design aesthetic.</p>
-      <a href="http://saniamulla.github.io/" target="_blank" rel="noopener noreferrer">Visit Site</a>
+      <!-- <a href="http://saniamulla.github.io/" target="_blank" rel="noopener noreferrer">Visit Site</a> -->
+      <div class="resume-button">
+       <a href="http://saniamulla.github.io/" target="_blank" rel="noopener noreferrer" class="resume-btn">Visit Site</a>
+       </div>
     </div>
   </div>
 </section>
@@ -417,7 +500,7 @@ Bootstrap</li>
   <section id="contact">
   <div class="section-content" style="max-width: 800px; margin: auto; text-align: center;">
     <h2 class="section-title">Contact Me</h2>
-    <p style="margin-bottom: 1rem; color: #fff; font-size: 1rem;">Email: <a href="mailto:saniamulla99@gmail.com" style="color: #ffd6ec;">saniamulla99@gmail.com</a><br/>Phone: 9970768834 / 9529927034<br/>Location: Pune, Maharashtra</p>
+    <p style="margin-bottom: 1rem; color: #000000; font-size: 1rem;">Email: <a href="mailto:saniamulla99@gmail.com" style="color: #000000;">saniamulla99@gmail.com</a><br/>Phone: 9970768834 / 9529927034<br/>Location: Pune, Maharashtra</p>
     <div class="icons" style="display: flex; justify-content: center; gap: 1rem; font-size: 1.5rem; margin-bottom: 1rem;">
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=saniamulla99@gmail.com" target="_blank" title="Email"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://linkedin.com/in/saniamulla2003" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
@@ -458,7 +541,7 @@ Bootstrap</li>
   const typewriter = document.getElementById("typewriter");
   const flipContainer = document.getElementById("flip-container");
   const titleRole = document.getElementById("title-role");
-  const text = "SANIA MULLA";
+  const text = "Hi, I am Sania";
   let index = 0;
 
   function typeEffect() {
@@ -487,8 +570,6 @@ Bootstrap</li>
 </script>
 </body>
 </html>
-
-
 
 
 
